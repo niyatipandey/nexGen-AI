@@ -10,8 +10,8 @@ const MATRIX = {
   },
   tariffs: {
     USD: { symbol: '$', multiplier: 1 },
-    INR: { symbol: '₹', multiplier: 1 },
-    EUR: { symbol: '€', multiplier: 0.92 },
+    INR: { symbol: '₹', multiplier: 86 },
+    EUR: { symbol: '€', multiplier: 0.86 },
   },
   annualDiscount: 0.8,
 }
