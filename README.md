@@ -9,7 +9,7 @@
 
 ## 🌐 Live Demo
 
-* **Live:** https://your-vercel-link.vercel.app
+* **Live:** https://nex-gen-ai-six.vercel.app/
 * **GitHub:** https://github.com/niyatipandey/nexGen-AI
 
 ---
