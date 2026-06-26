@@ -1,6 +1,7 @@
 # 🚀 NexGen AI
 
-> **Frontend Battle 3.0 – Phase 1 Submission**
+> **Built for Frontend Battle 3.0 – Phase 1**
+>
 > A premium, responsive AI SaaS landing page built with **React**, **Vite**, and **Tailwind CSS**.
 
 ![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square\&logo=react\&logoColor=black)
