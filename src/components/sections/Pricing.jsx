@@ -10,7 +10,7 @@ const MATRIX = {
   },
   tariffs: {
     USD: { symbol: '$', multiplier: 1 },
-    INR: { symbol: '₹', multiplier: 83.5 },
+    INR: { symbol: '₹', multiplier: 1 },
     EUR: { symbol: '€', multiplier: 0.92 },
   },
   annualDiscount: 0.8,
@@ -95,12 +95,11 @@ const PricingCard = ({ tier, priceRef, details }) => (
       </div>
 
       <p className="text-mystic-mint/50 text-sm leading-relaxed mb-10">
-        {details.desc}
-      </p>
+  {details.desc}
+</p>
 
-      {/* CTA */}
 <a
-  href="#"
+  href={tier === 'Enterprise' ? '/contact' : '/signup'}
   className="flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold mb-8 transition-all duration-200 group"
   style={
     details.highlighted
@@ -115,38 +114,37 @@ const PricingCard = ({ tier, priceRef, details }) => (
   }
   onMouseEnter={(e) => {
     if (!details.highlighted) {
-      e.currentTarget.style.borderColor = 'rgba(255,200,1,0.3)';
+      e.currentTarget.style.borderColor = 'rgba(255,200,1,0.3)'
     }
   }}
   onMouseLeave={(e) => {
     if (!details.highlighted) {
-      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
+      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'
     }
   }}
 >
   {tier === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
   <Icon name="chevron-right" className="w-4 h-4" />
 </a>
-
-<div
-  className="h-px mb-6"
-  style={{ background: 'rgba(255,255,255,0.06)' }}
-/>
-
-<ul className="flex flex-col gap-3 list-none flex-1">
-  {details.features.map((feature) => (
-    <li
-      key={feature}
-      className="flex items-center gap-3 text-sm text-mystic-mint/70"
-    >
-      <Icon
-        name="chevron-right"
-        className="w-3.5 h-3.5 text-forsythia flex-shrink-0"
+      <div
+        className="h-px mb-6"
+        style={{ background: 'rgba(255,255,255,0.06)' }}
       />
-      {feature}
-    </li>
-  ))}
-</ul>
+
+      <ul className="flex flex-col gap-3 list-none flex-1">
+        {details.features.map((feature) => (
+          <li
+            key={feature}
+            className="flex items-center gap-3 text-sm text-mystic-mint/70"
+          >
+            <Icon
+              name="chevron-right"
+              className="w-3.5 h-3.5 text-forsythia flex-shrink-0"
+            />
+            {feature}
+          </li>
+        ))}
+      </ul>
     </div>
   </article>
 )
@@ -207,10 +205,10 @@ export default function Pricing() {
 
   return (
     <section
-        id="pricing"
-        ref={initPrices}
-        className="pt-16 pb-24 px-6 relative"
-        >
+      id="pricing"
+      ref={initPrices}
+      className="pt-16 pb-24 px-6 relative"
+    >
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] pointer-events-none"
         style={{
@@ -272,17 +270,12 @@ export default function Pricing() {
             </div>
 
             <select
-                className="bg-oceanic-noir text-arctic-powder border border-white/10 rounded-xl px-4 py-2"
-                >
-                <option value="USD" className="text-white">
-                    $ USD
-                </option>
-                <option value="INR" className="text-white">
-                    ₹ INR
-                </option>
-                <option value="EUR" className="text-white">
-                    € EUR
-                </option>
+              className="bg-oceanic-noir text-arctic-powder border border-white/10 rounded-xl px-4 py-2"
+              onChange={handleCurrencyChange}
+            >
+              <option value="USD" className="text-white">$ USD</option>
+              <option value="INR" className="text-white">₹ INR</option>
+              <option value="EUR" className="text-white">€ EUR</option>
             </select>
           </div>
         </div>
